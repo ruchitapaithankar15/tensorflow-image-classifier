@@ -17,3 +17,6 @@ model = keras.Sequential([
     keras.layers.Dense(units=128, activation=tf.nn.relu),
     keras.layers.Dense(units=10, activation=tf.nn.softmax)
 ])
+
+model.compile(optimizer=tf.optimizer.Adam(),loss='sparse_categorical_crossentropy')
+model.fit(train_img,train_labels,epochs=5)
